@@ -30,7 +30,7 @@ RUN wget -q https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.39/bin/apache-t
     # init_threads = 1, > 1 been reported some issues
     jq '.ors.services.routing.init_threads = 1' /ors-core/openrouteservice/src/main/resources/app.config |sponge /ors-core/openrouteservice/src/main/resources/app.config && \
     # Delete all profiles but car
-    jq 'del(.ors.services.routing.profiles.active[1,2,3,4,5,6,7,8])' /ors-core/openrouteservice/src/main/resources/app.config |sponge /ors-core/openrouteservice/src/main/resources/app.config
+    jq 'del(.ors.services.routing.profiles.active[2,3,4,5,6,7,8])' /ors-core/openrouteservice/src/main/resources/app.config |sponge /ors-core/openrouteservice/src/main/resources/app.config
 
 COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 
